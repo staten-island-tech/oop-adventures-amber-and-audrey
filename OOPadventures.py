@@ -1,10 +1,24 @@
-
+import json 
+import os
+with open("data.json", "r") as f:
+    # Serialize the updated Python list to a JSON string
+    data = json.load(f)
+name = ""
+gender = ""
+element = ""
+weapon = ""
 class game():
-    def __init__(self, name, gender, element, weapon):
+    def player(self, name, gender, element, weapon):
         self.name = name
         self.gender = gender
         self.element = element
         self.weapon = weapon
+        name = input("Enter your name: ")
+        gender = input("Enter your gender: ")
+        element = input("Enter your element: ")
+        weapon = input("Enter your weapon: ")
+        data.append(name,gender,element,weapon)
+
     def __str__(self):
         return f"{self.name}"
     def __str__(self):
@@ -13,18 +27,7 @@ class game():
         return f"{self.element}"
     def __str__(self):
         return f"{self.weapon}"
-    base
-    import json 
-    import os
-    with open("game.json", "r") as f:
-        game = json.load(f)
-    new_file = "updated.json"
-    with open(new_file, "w") as f:
-        json_string = json.dumps(game)
-    f.write(json_string)
 
-    os.remove("game.json")
-    os.rename(new_file, "game.json")
 
 class level(game):
     def __init__(self, lvl, hp, atk, speed, defense, quest):
@@ -48,7 +51,7 @@ class level(game):
     "defense": defense,
     "quest": quest
 }
-
+  
 class enemies(game):
     def __init__(self, name, hp, atk, speed, defense):
         self.name = name
@@ -70,7 +73,5 @@ class enemies(game):
 }
 
 
-    
-
-
-
+game =game()
+game.player(name, gender, element, weapon)
