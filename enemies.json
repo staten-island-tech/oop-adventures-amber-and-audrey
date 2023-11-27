@@ -1,1 +1,72 @@
-[{"name": "slimes", "hp": 10, "atk": 1, "speed": 1, "defense": 0}, {"name": "hilichurls", "hp": 10, "atk": 2, "speed": 2, "defense": 1}, {"name": "bigchurls", "hp": 30, "atk": 5, "speed": 5, "defense": 5}, {"name": "abyss mages", "hp": 50, "atk": 10, "speed": 10, "defense": 8}, {"name": "bandits", "hp": 80, "atk": 20, "speed": 20, "defense": 15}, {"name": "samurais", "hp": 100, "atk": 50, "speed": 50, "defense": 25}, {"name": "fatui agents", "hp": 125, "atk": 70, "speed": 70, "defense": 50}]
+[
+    {
+        "name": "slimes",
+        "hp": 10,
+        "atk": 1,
+        "speed": 1,
+        "defense": 0
+    },
+    {
+        "name": "hilichurls",
+        "hp": 10,
+        "atk": 2,
+        "speed": 2,
+        "defense": 1
+    },
+    {
+        "name": "bigchurls",
+        "hp": 30,
+        "atk": 5,
+        "speed": 5,
+        "defense": 5
+    },
+    {
+        "name": "abyss mages",
+        "hp": 50,
+        "atk": 10,
+        "speed": 10,
+        "defense": 8
+    },
+    {
+        "name": "bandits",
+        "hp": 80,
+        "atk": 20,
+        "speed": 20,
+        "defense": 15
+    },
+    {
+        "name": "samurais",
+        "hp": 100,
+        "atk": 50,
+        "speed": 50,
+        "defense": 25
+    },
+    {
+        "name": "fatui agents",
+        "hp": 125,
+        "atk": 70,
+        "speed": 70,
+        "defense": 50
+    },
+    {
+        "name": "robots",
+        "hp": 170,
+        "atk": 100,
+        "speed": 100,
+        "defense": 80
+    },
+    {
+        "name": "natureswayatgettingbackatus",
+        "hp": 200,
+        "atk": 150,
+        "speed": 150,
+        "defense": 120
+    },
+    {
+        "name": "bob",
+        "hp": 1000,
+        "atk": 500,
+        "speed": 250,
+        "defense": 150
+    }
+]
