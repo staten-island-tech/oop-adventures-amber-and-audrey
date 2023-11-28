@@ -23,8 +23,6 @@ class game():
     def __str__(self):
         return f"{self.weapon}"
 
-questList= []
-
 class level():
     def __init__(self, lvl, hp, atk, speed, defense, quest):
         self.lvl = lvl
@@ -39,6 +37,7 @@ class level():
     speed = int(input("Enter speed: "))
     defense = int(input("Enter defense: "))
     quest = input("Enter quest: ")
+    questList= []
     questList.append(quest)
     base = {
         "lvl": lvl,
