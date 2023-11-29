@@ -1,9 +1,7 @@
-import json 
+import json
 import os
-with open("enemies.json", "r") as f:
-    # Serialize the updated Python list to a JSON string
+with open("level.json", "r") as f:
     data = json.load(f)
-
 class game():
     def player(self, name, gender, element, weapon):
         self.name = name
@@ -25,31 +23,35 @@ class game():
     def __str__(self):
         return f"{self.weapon}"
 
-
-class enemies(game):
-    def __init__(self, name, hp, atk, speed, defense):
-        self.name = name
+class level():
+    def __init__(self, lvl, hp, atk, speed, defense, quest):
+        self.lvl = lvl
         self.hp = hp
         self.atk = atk
         self.speed = speed
         self.defense = defense
-    name = input("Enter the enemies' name: ")
+        self.quest = quest
+    lvl = int(input("Enter a lvl: "))
     hp = int(input("Enter hp: "))
     atk = int(input("Enter atk: "))
     speed = int(input("Enter speed: "))
     defense = int(input("Enter defense: "))
+    quest = input("Enter quest: ")
+    questList= []
+    questList.append(quest)
     base = {
-    "name": name,
-    "hp": hp,
-    "atk": atk,
-    "speed": speed,
-    "defense": defense
-}
+        "lvl": lvl,
+        "hp": hp,
+        "atk": atk,
+        "speed": speed,
+        "defense": defense,
+        "quest": questList
+    }
     data.append(base)
 
 new_file = "updated.json"
 with open(new_file, "w") as f:
     json_string = json.dumps(data)
     f.write(json_string)
-os.remove("enemies.json")
-os.rename(new_file, "enemies.json")
+os.remove("level.json")
+os.rename(new_file,"level.json")
