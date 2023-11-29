@@ -1,1 +1,8 @@
-[{"name": "hambergss", "gender": "female", "element": "water", "weapon": "sword"}]
+[
+    {
+        "name": "hambergss",
+        "gender": "female",
+        "element": "water",
+        "weapon": "sword"
+    }
+]
