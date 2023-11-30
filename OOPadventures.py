@@ -1,8 +1,19 @@
 import json 
 import os
-with open("data.json", "r") as f:
-    # Serialize the updated Python list to a JSON string
-    data = json.load(f)
+
+with open("game.json", "r") as f:
+    jsonLoad = json.load(f)
+name = 'o'
+gender = 'o'
+element = 'o'
+weapon = 'o'
+
+lvl = 1
+hp = 1
+atk = 1
+speed = 1
+defense = 1
+quest = 'o'
 
 class game():
     def player(self, name, gender, element, weapon):
@@ -29,26 +40,13 @@ class game():
         "element": element,
         "weapon": weapon
 }
-    data.append(base)
-
-new_file = "updated.json"
-with open(new_file, "w") as f:
-    json_string = json.dumps(data)
-    f.write(json_string)
-
-os.remove("game.json")
-os.rename(new_file, "game.json")
+    jsonLoad.append(base)
 
 
 
-import json 
-import os
-with open("data.json", "r") as f:
-    # Serialize the updated Python list to a JSON string
-    data = json.load(f)
 
 class level(game):
-    def __init__(self, lvl, hp, atk, speed, defense, quest):
+    def createLevel(self, lvl, hp, atk, speed, defense, quest):
         self.lvl = lvl
         self.hp = hp
         self.atk = atk
@@ -71,25 +69,12 @@ class level(game):
         "defense": defense,
         "quest": questList
     }
-    data.append(base)
-
-new_file = "updated.json"
-with open(new_file, "w") as f:
-    json_string = json.dumps(data)
-    f.write(json_string)
-os.remove("level.json")
-os.rename(new_file,"level.json")
-  
-import json 
-import os
-with open("enemies.json", "r") as f:
-    # Serialize the updated Python list to a JSON string
-    data = json.load(f)
+    jsonLoad.append(base)
 
 
 
 class enemies(game):
-    def __init__(self, name, hp, atk, speed, defense):
+    def enemyCreate(self, name, hp, atk, speed, defense):
         self.name = name
         self.hp = hp
         self.atk = atk
@@ -107,12 +92,56 @@ class enemies(game):
     "speed": speed,
     "defense": defense
 }
-    data.append(base)    
+    jsonLoad.append(base)    
+enemies = enemies()
+game = game()
+level = level()
+
+
+
+with open("game.json", "r") as f:
+    jsonLoad = json.load(f)
+
+    game.player(name, gender, element, weapon)
+    jsonLoad.append(game.base)
 
 new_file = "updated.json"
 with open(new_file, "w") as f:
-    json_string = json.dumps(data)
+    json_string = json.dumps(jsonLoad)
+    f.write(json_string)
+
+os.remove("game.json")
+os.rename(new_file, "game.json")
+
+
+
+with open("level.json", "r") as f:
+    jsonLoad = json.load(f)
+
+    level.createLevel(lvl, hp, atk, speed, defense, quest)
+    jsonLoad.append(level.base)
+
+new_file = "updated.json"
+with open(new_file, "w") as f:
+    json_string = json.dumps(jsonLoad)
+    f.write(json_string)
+
+os.remove("level.json")
+os.rename(new_file, "level.json")
+
+
+
+with open("enemies.json", "r") as f:
+    jsonLoad = json.load(f)
+
+    enemies.enemyCreate(name, hp, atk, speed, defense)
+    jsonLoad.append(enemies.base)
+
+new_file = "updated.json"
+with open(new_file, "w") as f:
+    json_string = json.dumps(jsonLoad)
     f.write(json_string)
 
 os.remove("enemies.json")
 os.rename(new_file, "enemies.json")
+
