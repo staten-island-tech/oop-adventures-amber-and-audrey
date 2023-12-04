@@ -8,7 +8,7 @@ with open("game.json", "r") as f:
 name = 'o'
 gender = 'o'
 element = 'o'
-weapon = 'o'
+weapon = "a"
 
 lvl = 1
 hp = 1
@@ -36,17 +36,33 @@ class game():
     gender = input("Enter your gender: ")
     element = input("Enter your element: ")
     weapon = input("Enter your weapon: ")
-    base = {
-        "name": name,
-        "gender": gender,
-        "element": element,
-        "weapon": weapon
+    def base(base):
+        base = {
+            "name": name,
+            "gender": gender,
+            "element": element,
+            "weapon": weapon
 }
-
-    print("Hello", name)
-    if base == [name, gender, element, weapon]:
-        print("You are level 1 because you repel women lmao.")
     jsonLoad.append(base)
+    print("Hello", name)
+    print 
+    if base == []:
+        print("You are level 1 because you repel women lmao.")
+    
+        with open("game.json", "r") as f:
+            jsonLoad = json.load(f)
+
+game.player(self, name, gender, element, weapon)
+jsonLoad.append(game.base)
+
+new_file = "updated.json"
+with open(new_file, "w") as f:
+    json_string = json.dumps(jsonLoad)
+f.write(json_string)
+
+os.remove("game.json")
+os.rename(new_file, "game.json")
+
 class level(game):
     def createLevel(self, lvl, hp, atk, speed, defense, quest):
         self.lvl = lvl
@@ -59,7 +75,7 @@ class level(game):
 
     firstmessage = input("would you like to complete the quest provided to level up? (Y/N)")
     if firstmessage == ("Y"):
-        print(game.quest)
+        print(lvl.quest)
 
 
 class enemies(game):
@@ -80,9 +96,11 @@ game = game()
 level = level()
 
 
+def battlesystem():
+    
 
-with open("game.json", "r") as f:
-    jsonLoad = json.load(f)
+    with open("game.json", "r") as f:
+        jsonLoad = json.load(f)
 
     game.player(name, gender, element, weapon)
     jsonLoad.append(game.base)

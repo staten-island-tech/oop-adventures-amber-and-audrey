@@ -44,7 +44,6 @@ class game():
 
 
 
-
 class level(game):
     def createLevel(self, lvl, hp, atk, speed, defense, quest):
         self.lvl = lvl
