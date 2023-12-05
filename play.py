@@ -1,12 +1,14 @@
+
 import json 
 import os
 
+print("Hello, player. Welcome to waifu simulator.")
 with open("game.json", "r") as f:
     jsonLoad = json.load(f)
 name = 'o'
 gender = 'o'
 element = 'o'
-weapon = 'o'
+weapon = "a"
 
 lvl = 1
 hp = 1
@@ -34,15 +36,32 @@ class game():
     gender = input("Enter your gender: ")
     element = input("Enter your element: ")
     weapon = input("Enter your weapon: ")
-    base = {
-        "name": name,
-        "gender": gender,
-        "element": element,
-        "weapon": weapon
+    def base(base):
+        base = {
+            "name": name,
+            "gender": gender,
+            "element": element,
+            "weapon": weapon
 }
     jsonLoad.append(base)
+    print("Hello", name)
+    print 
+    if base == []:
+        print("You are level 1 because you repel women lmao.")
+    
+        with open("game.json", "r") as f:
+            jsonLoad = json.load(f)
 
+game.player(self, name, gender, element, weapon)
+jsonLoad.append(game.base)
 
+new_file = "updated.json"
+with open(new_file, "w") as f:
+    json_string = json.dumps(jsonLoad)
+f.write(json_string)
+
+os.remove("game.json")
+os.rename(new_file, "game.json")
 
 class level(game):
     def createLevel(self, lvl, hp, atk, speed, defense, quest):
@@ -52,24 +71,11 @@ class level(game):
         self.speed = speed
         self.defense = defense
         self.quest = quest
-    lvl = int(input("Enter a lvl: "))
-    hp = int(input("Enter hp: "))
-    atk = int(input("Enter atk: "))
-    speed = int(input("Enter speed: "))
-    defense = int(input("Enter defense: "))
-    quest = input("Enter quest: ")
     questList= []
-    questList.append(quest)
-    base = {
-        "lvl": lvl,
-        "hp": hp,
-        "atk": atk,
-        "speed": speed,
-        "defense": defense,
-        "quest": questList
-    }
-    jsonLoad.append(base)
 
+    firstmessage = input("would you like to complete the quest provided to level up? (Y/N)")
+    if firstmessage == ("Y"):
+        print(lvl.quest)
 
 
 class enemies(game):
@@ -84,22 +90,17 @@ class enemies(game):
     atk = int(input("Enter atk: "))
     speed = int(input("Enter speed: "))
     defense = int(input("Enter defense: "))
-    base = {
-    "name": name,
-    "hp": hp,
-    "atk": atk,
-    "speed": speed,
-    "defense": defense
-}
-    jsonLoad.append(base)    
+
 enemies = enemies()
 game = game()
 level = level()
 
 
+def battlesystem():
+    
 
-with open("game.json", "r") as f:
-    jsonLoad = json.load(f)
+    with open("game.json", "r") as f:
+        jsonLoad = json.load(f)
 
     game.player(name, gender, element, weapon)
     jsonLoad.append(game.base)
