@@ -52,7 +52,7 @@ class game():
         with open("game.json", "r") as f:
             jsonLoad = json.load(f)
 
-game.player(self, name, gender, element, weapon)
+game.player(name, gender, element, weapon)
 jsonLoad.append(game.base)
 
 new_file = "updated.json"
