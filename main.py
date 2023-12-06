@@ -12,14 +12,31 @@ class game():
         return f"{self.element}"
     def __str__(self):
         return f"{self.weapon}"
+    def __init__(self, Player):
+        self.player = Player
+        return f"{self.player}"
+    def __init__(self, tutorial):
+        self.tutorial = tutorial
+        return list[self.tutorial]
+name = 1
+gender = 2
+element = 3
+weapon = 4
+Player = []
+info = game(Player)
+player = game(info)
 
 
 Player = []
-info = game.create()
-player = Player(info)
-game.tutorial(player)
+tutorial1 = input("Welcome to Waifu Simulator! Enter a name, gender, element, and weapon: ")
 
-print("Hello, ", player.info)
+if (",") in tutorial1:
+    print("Hello, ", info)
+if not tutorial1:
+    print("Sorry there is no info found.")
+
+
+
 
 """ class level(game):
     def __init__(self, lvl, hp, atk, speed, defense, quest):
