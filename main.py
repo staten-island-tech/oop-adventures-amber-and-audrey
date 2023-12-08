@@ -1,10 +1,9 @@
 class game():
-    def __init__(self, name, gender, element, weapon, player, tutorial):
+    def __init__(self, name, gender, element, weapon, tutorial):
         self.name = name
         self.gender = gender
         self.element = element
         self.weapon = weapon
-        self.player = player
         self.tutorial = tutorial
     def __str__(self):
         return f"{self.name}"
@@ -15,21 +14,17 @@ class game():
     def __str__(self):
         return f"{self.weapon}"
     def __str__(self):
-        return f"{self.player}"
-    def __str__(self):
         return f"{self.tutorial}"
 
 
-
-name = game.tutorial()
-gender = game.tutorial()
-element = game.tutorial()
-weapon = game.tutorial()
-
-info = game(name, gender, element, weapon)
-tutorial1 = game(info)
-
 tutorial1 = input("Welcome to Waifu Simulator! Enter a name, gender, element, and weapon: ")
+
+name = game("", "", "", "", "")
+gender = game("", "", "", "", "")
+element = game("", "", "", "", "")
+weapon = game("", "", "", "", "")
+
+info = game(name, gender, element, weapon, tutorial1)
 
 if (",") in tutorial1:
     print("Hello, ", info)
@@ -39,7 +34,7 @@ if not tutorial1:
 
 
 
-""" class level(game):
+class level(game):
     def __init__(self, lvl, hp, atk, speed, defense, quest):
         self.lvl = lvl
         self.hp = hp
@@ -59,4 +54,20 @@ lvl8 = level(8, 240, 170, 60, 70, ["Fight 72 slimes, Fight 75 hilichurls, Fight 
 lvl9 = level(9, 260, 230, 70, 80, ["Fight 80 slimes, Fight 80 hilichurls, Fight 15 bigchurls, Fight 20 abyss mages, Fight 10 samurai, Fight 10 fatui agents, Fight 10 robots, Fight 5 natureswayatgettingbackatus, Fight 1 bob"])
 lvl10 = level(10, 300, 300, 80, 90, ["Fight 100 slimes, Fight 100 hilichurls, Fight 20 Bigchurls, Fight 30 abyss mages, FIght 25 bandits, Fight 15 samurai, Fight 15 fatui agents, Fight 20 robots, Fight 6 natureswayatgettingbackatus, Fight 10 bobs"])
 
- """
+
+print()
+print("You are level 1 because you repel women lmao.")
+
+tutorial2 = input("Would you like to see your stats for level 1? (Y/N): ")
+
+if tutorial2 == "Y":
+    print(level.lvl1[0])
+else:
+    print("...")
+
+tutorial3 = input("Would you like to see your currently available quests? (Y/N): ")
+
+if tutorial3 == "Y":
+    print(lvl1[5])
+else:
+    print("Bruh you coward.")
