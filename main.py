@@ -27,7 +27,7 @@ weapon = game("", "", "", "", "")
 info = game(name, gender, element, weapon, tutorial1)
 
 if (",") in tutorial1:
-    print("Hello, ", info)
+    print("Hello, ", info[0])
 if not tutorial1:
     print("Sorry there is no info found.")
 
