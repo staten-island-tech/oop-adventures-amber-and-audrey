@@ -17,23 +17,21 @@ class game():
         return f"{self.tutorial}"
 
 
-tutorial1 = input("Welcome to Waifu Simulator! Enter a name, gender, element, and weapon: ")
+print("Welcome to Waifu Simulator!")
+print()
 
-name = game("", "", "", "", "")
-gender = game("", "", "", "", "")
-element = game("", "", "", "", "")
-weapon = game("", "", "", "", "")
+#input a string
+tutorial1 = input("Enter a name, gender, element, and weapon with a space separating each word: ")
 
-info = game(name, gender, element, weapon, tutorial1)
+#to separate the string by each word using spaces
+split_tutorial1 = tutorial1.split()
 
-if (",") in tutorial1:
-    print("Hello, ", info[0])
-if not tutorial1:
-    print("Sorry there is no info found.")
-
+#to find the first word of the string
+first_word = split_tutorial1[0]
+print("Hello,", first_word)
 
 
-
+#level class in the game class and assign a set, lvl, hp, atk, speed, def, and quests for each level
 class level(game):
     def __init__(self, lvl, hp, atk, speed, defense, quest):
         self.lvl = lvl
@@ -59,6 +57,10 @@ print()
 print("You are level 1 because you repel women lmao.")
 
 tutorial2 = input("Would you like to see your stats for level 1? (Y/N): ")
+
+#separates lvl 1
+split_lvl1 = lvl1.split()
+
 
 if tutorial2 == "Y":
     print(level.lvl1[0])
