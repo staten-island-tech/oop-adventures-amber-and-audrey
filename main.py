@@ -63,7 +63,7 @@ split_lvl1 = lvl1.split()
 
 
 if tutorial2 == "Y":
-    print(level.lvl1[0])
+    print()
 else:
     print("...")
 
