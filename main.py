@@ -56,20 +56,39 @@ lvl10 = level(10, 300, 300, 80, 90, ["Fight 100 slimes, Fight 100 hilichurls, Fi
 print()
 print("You are level 1 because you repel women lmao.")
 
+#user input to see stats
 tutorial2 = input("Would you like to see your stats for level 1? (Y/N): ")
 
-#separates lvl 1
-split_lvl1 = lvl1.split()
-
-
+#if "Y" then print lvl1 stats, if "N" then L bozo
 if tutorial2 == "Y":
-    print()
+    print("LVL:",lvl1.lvl, "HP:",lvl1.hp, "ATK:",lvl1.atk, "SPEED:",lvl1.speed, "DEF:",lvl1.defense)
 else:
     print("...")
 
+
+#user input to see quests
 tutorial3 = input("Would you like to see your currently available quests? (Y/N): ")
 
+#if "Y" then print lvl1 quests, if "N" then you coward
 if tutorial3 == "Y":
-    print(lvl1[5])
+    print("QUESTS:",lvl1.quest)
 else:
     print("Bruh you coward.")
+print()
+
+
+#enemy class in the game class to set, name, hp, atk, speed, def, of each enemy
+class enemies(game):
+    def __init__(self, name, hp, atk, speed, defense):
+        self.name = name
+        self.hp = hp
+        self.atk = atk
+        self.speed = speed
+        self.defense = defense
+
+
+slimes = enemies("slimes", 10, 1, 1, 0)
+hilichurls = enemies("hilichurls", 10, 2, 2, 1)
+bigchurls = enemies("bigchurls", 30, 5, 5, 5)
+abyss_mages = enemies("abyss_mages", 50, 10, 10, 8)
+bandits = enemies("bandits", 80, 20, 20, 15)
