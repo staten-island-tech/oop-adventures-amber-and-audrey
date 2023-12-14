@@ -79,16 +79,34 @@ print()
 
 #enemy class in the game class to set, name, hp, atk, speed, def, of each enemy
 class enemies(game):
-    def __init__(self, name, hp, atk, speed, defense):
+    def __init__(self, name, hp, atk, speed, defense, grass):
         self.name = name
         self.hp = hp
         self.atk = atk
         self.speed = speed
         self.defense = defense
+        self.grass = grass
 
 
-slimes = enemies("slimes", 10, 1, 1, 0)
-hilichurls = enemies("hilichurls", 10, 2, 2, 1)
-bigchurls = enemies("bigchurls", 30, 5, 5, 5)
-abyss_mages = enemies("abyss_mages", 50, 10, 10, 8)
-bandits = enemies("bandits", 80, 20, 20, 15)
+slimes = enemies("slimes", 10, 1, 1, 0, 2)
+hilichurls = enemies("hilichurls", 10, 2, 2, 1, 3)
+bigchurls = enemies("bigchurls", 30, 5, 5, 5, 7)
+abyss_mages = enemies("abyss_mages", 50, 10, 10, 8, 13)
+bandits = enemies("bandits", 80, 20, 20, 15, 15)
+samurais = enemies("samurais", 100, 50, 50, 25, 20)
+fatui_agents = enemies("fatui_agents", 125, 70, 70, 50, 50)
+robots = enemies("robots", 170, 100, 100, 80, 75)
+natureswayofgettingbackatus = enemies("natureswayofgettingbackatus", 200, 150, 150, 120, 100)
+bob = enemies("bob", 1000, 500, 250, 150, 1000)
+
+class BATTLE(enemies):
+    def battletutorial():
+        tutorial4 = input("Would you like to start your quests? (Y/N): ")
+        if tutorial4 == "Y":
+            print("You are walking towards the battle arena...")
+        else:
+            print("I guess you don't want to touch grass...")
+    def attack():
+        
+
+
