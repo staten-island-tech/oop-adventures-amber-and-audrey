@@ -15,6 +15,8 @@ class game():
         return f"{self.weapon}"
     def __str__(self):
         return f"{self.tutorial}"
+    def attack(self, remove_health, enemies):
+        enemies.hp = enemies.hp - remove_health
 
 
 print("Welcome to Waifu Simulator!")
@@ -41,6 +43,8 @@ class level(game):
         self.defense = defense
         self.quest = quest
 
+
+
 lvl1 = level(1, 100, 5, 1, 0, ["Fight 3 slimes, Fight 3 hilichurls, Fight 1 bigchurls, Fight 2 abyss mages"])
 lvl2 = level(2, 120, 10, 5, 10, ["Fight 10 slimes, Fight 10 hilichurls, Fight 2 bigchurls, Fight 2 abyss mages"])
 lvl3 = level(3, 140, 20, 10, 20, ["Fight 15 slimes, Fight 15 Hilichurls, Fight 3 bigchurls, Fight 3 abyss mages, Fight 4 bandits"])
@@ -51,10 +55,12 @@ lvl7 = level(7, 220, 120, 50, 60, ["Fight 50 slimes, Fight 50 hilichurls, Fight 
 lvl8 = level(8, 240, 170, 60, 70, ["Fight 72 slimes, Fight 75 hilichurls, Fight 10 bigchurls, FIght 15 abyss mages, Fight 16 bandits, Fight 8 samurai, Fight 7 fatui agents, Fight 6 robots, Fight 3 natureswayatgettingbackatus"])
 lvl9 = level(9, 260, 230, 70, 80, ["Fight 80 slimes, Fight 80 hilichurls, Fight 15 bigchurls, Fight 20 abyss mages, Fight 10 samurai, Fight 10 fatui agents, Fight 10 robots, Fight 5 natureswayatgettingbackatus, Fight 1 bob"])
 lvl10 = level(10, 300, 300, 80, 90, ["Fight 100 slimes, Fight 100 hilichurls, Fight 20 Bigchurls, Fight 30 abyss mages, FIght 25 bandits, Fight 15 samurai, Fight 15 fatui agents, Fight 20 robots, Fight 6 natureswayatgettingbackatus, Fight 10 bobs"])
+print(lvl1.hp)
 
+currentLvl = lvl1
+remove_health = currentLvl.atk
 
-print()
-print("You are level 1 because you repel women lmao.")
+print("\nYou are level 1 because you repel women lmao.")
 
 #user input to see stats
 tutorial2 = input("Would you like to see your stats for level 1? (Y/N): ")
@@ -99,14 +105,22 @@ robots = enemies("robots", 170, 100, 100, 80, 75)
 natureswayofgettingbackatus = enemies("natureswayofgettingbackatus", 200, 150, 150, 120, 100)
 bob = enemies("bob", 1000, 500, 250, 150, 1000)
 
-class BATTLE(enemies):
-    def battletutorial():
-        tutorial4 = input("Would you like to start your quests? (Y/N): ")
-        if tutorial4 == "Y":
-            print("You are walking towards the battle arena...")
-        else:
-            print("I guess you don't want to touch grass...")
-    def attack():
+
+checker = 0
+tutorial4 = input("Would you like to start your quests? (Y/N): ")
+""" if tutorial4 == "Y":
+    print("You are walking towards the battle arena...")
+    checker = 'tutorial'
+else:
+    print("I guess you don't want to touch grass...")
+    checker = "exit game"
+if checker == "tutorial":
+    #tutorial start
+else:
+    #end code """
+
+
+
+
+
         
-
-
