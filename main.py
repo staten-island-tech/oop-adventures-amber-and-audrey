@@ -63,7 +63,7 @@ remove_health = currentLvl.atk
 print("\nYou are level 1 because you repel women lmao.")
 
 #user input to see stats
-tutorial2 = input("Would you like to see your stats for level 1? (Y/N): ")
+tutorial2 = input("Would you like to see your stats for level 1? (Y/N): ").upper()
 
 #if "Y" then print lvl1 stats, if "N" then L bozo
 if tutorial2 == "Y":
@@ -73,7 +73,7 @@ else:
 
 
 #user input to see quests
-tutorial3 = input("Would you like to see your currently available quests? (Y/N): ")
+tutorial3 = input("Would you like to see your currently available quests? (Y/N): ").upper()
 
 #if "Y" then print lvl1 quests, if "N" then you coward
 if tutorial3 == "Y":
@@ -94,10 +94,10 @@ class enemies(game):
         self.grass = grass
 
 
-slimes = enemies("slimes", 10, 1, 1, 0, 2)
-hilichurls = enemies("hilichurls", 10, 2, 2, 1, 3)
-bigchurls = enemies("bigchurls", 30, 5, 5, 5, 7)
-abyss_mages = enemies("abyss_mages", 50, 10, 10, 8, 13)
+slimes = enemies("slimes", 5, 1, 1, 0, 2)
+hilichurls = enemies("hilichurls", 5, 2, 2, 1, 3)
+bigchurls = enemies("bigchurls", 10, 5, 5, 5, 7)
+abyss_mages = enemies("abyss_mages", 15, 5, 5, 8, 13)
 bandits = enemies("bandits", 80, 20, 20, 15, 15)
 samurais = enemies("samurais", 100, 50, 50, 25, 20)
 fatui_agents = enemies("fatui_agents", 125, 70, 70, 50, 50)
@@ -107,17 +107,21 @@ bob = enemies("bob", 1000, 500, 250, 150, 1000)
 
 
 checker = 0
-tutorial4 = input("Would you like to start your quests? (Y/N): ")
-""" if tutorial4 == "Y":
-    print("You are walking towards the battle arena...")
-    checker = 'tutorial'
+tutorial4 = input("Would you like to start your quests? (Y/N): ").upper()
+if tutorial4 == "Y":
+    checker += 2
 else:
     print("I guess you don't want to touch grass...")
-    checker = "exit game"
-if checker == "tutorial":
-    #tutorial start
-else:
-    #end code """
+    checker += 0
+
+elif checker == 2:
+    print("You are walking towards the battle arena...")
+    user1 = input("You have encountered a wild slime! Would you like to initiate a battle? (Y/N): ").upper()
+if user1 == "Y":
+
+    
+
+
 
 
 
