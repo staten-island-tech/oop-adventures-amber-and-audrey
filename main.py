@@ -5,7 +5,10 @@ class game():
         self.element = element
         self.weapon = weapon
         self.tutorial = tutorial
-    def __str__(self):
+    def attack(self, remove_health, enemies):
+        enemies.hp = enemies.hp - remove_health
+
+"""     def __str__(self):
         return f"{self.name}"
     def __str__(self):
         return f"{self.gender}"
@@ -14,9 +17,7 @@ class game():
     def __str__(self):
         return f"{self.weapon}"
     def __str__(self):
-        return f"{self.tutorial}"
-    def attack(self, remove_health, enemies):
-        enemies.hp = enemies.hp - remove_health
+        return f"{self.tutorial}" """
 
 
 print("Welcome to Waifu Simulator!")
@@ -92,6 +93,8 @@ class enemies(game):
         self.speed = speed
         self.defense = defense
         self.grass = grass
+    def attack(self, enmy):
+        print(enmy)
 
 
 slimes = enemies("slimes", 5, 1, 1, 0, 2)
@@ -106,18 +109,24 @@ natureswayofgettingbackatus = enemies("natureswayofgettingbackatus", 200, 150, 1
 bob = enemies("bob", 1000, 500, 250, 150, 1000)
 
 
+
+
 checker = 0
-tutorial4 = input("Would you like to start your quests? (Y/N): ").upper()
+tutorial4 = input("Would you like to start your quests? YOU CAN ONLY DO OTHER THINGS ONCE YOU COMPLETE THIS WARNINGGGG! NO GAME FOR YOU IF YOU SAY NO (Y/N): ").upper()
 if tutorial4 == "Y":
-    checker += 2
+    checker += 1
 else:
     print("I guess you don't want to touch grass...")
     checker += 0
-
-elif checker == 2:
+    
+if checker == 1:
     print("You are walking towards the battle arena...")
     user1 = input("You have encountered a wild slime! Would you like to initiate a battle? (Y/N): ").upper()
 if user1 == "Y":
+    EPICBATTLE()
+    
+
+
 
     
 
