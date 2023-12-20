@@ -1,12 +1,10 @@
-class game():
+class user():
     def __init__(self, name, gender, element, weapon, tutorial):
         self.name = name
         self.gender = gender
         self.element = element
         self.weapon = weapon
         self.tutorial = tutorial
-    def attack(self, remove_health, enemies):
-        enemies.hp = enemies.hp - remove_health
 
 """     def __str__(self):
         return f"{self.name}"
@@ -35,7 +33,7 @@ print("Hello,", first_word)
 
 
 #level class in the game class and assign a set, lvl, hp, atk, speed, def, and quests for each level
-class level(game):
+class level(user):
     def __init__(self, lvl, hp, atk, speed, defense, quest):
         self.lvl = lvl
         self.hp = hp
@@ -43,6 +41,7 @@ class level(game):
         self.speed = speed
         self.defense = defense
         self.quest = quest
+
 
 
 
@@ -85,7 +84,7 @@ print()
 
 
 #enemy class in the game class to set, name, hp, atk, speed, def, of each enemy
-class enemies(game):
+class enemies(user):
     def __init__(self, name, hp, atk, speed, defense, grass):
         self.name = name
         self.hp = hp
@@ -93,9 +92,8 @@ class enemies(game):
         self.speed = speed
         self.defense = defense
         self.grass = grass
-    def attack(self, enmy):
-        print(enmy)
-
+    def attack(self, enemies):
+        enemies.hp = enemies.hp - level.atk
 
 slimes = enemies("slimes", 5, 1, 1, 0, 2)
 hilichurls = enemies("hilichurls", 5, 2, 2, 1, 3)
@@ -109,7 +107,11 @@ natureswayofgettingbackatus = enemies("natureswayofgettingbackatus", 200, 150, 1
 bob = enemies("bob", 1000, 500, 250, 150, 1000)
 
 
-
+def Battle_info(enemies):
+    print(f"{enemies.name} hp: {enemies.hp}, atk: {enemies.atk}, speed: {enemies.speed}, defense: {enemies.defense}, grass: {enemies.grass}")
+    print(f"{first_word} hp: {level.hp}, atk: {level.atk}, speed: {level.speed}, defense: {level.defense})")
+    enemies.attack
+    print(f"hp: {enemies.hp}")
 
 checker = 0
 tutorial4 = input("Would you like to start your quests? YOU CAN ONLY DO OTHER THINGS ONCE YOU COMPLETE THIS WARNINGGGG! NO GAME FOR YOU IF YOU SAY NO (Y/N): ").upper()
@@ -123,7 +125,9 @@ if checker == 1:
     print("You are walking towards the battle arena...")
     user1 = input("You have encountered a wild slime! Would you like to initiate a battle? (Y/N): ").upper()
 if user1 == "Y":
-    EPICBATTLE()
+    enemies = slimes
+    Battle_info(enemies)
+
     
 
 
