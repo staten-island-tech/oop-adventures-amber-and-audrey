@@ -1,3 +1,8 @@
+import random
+from operator import add, sub, mul
+
+
+
 class user():
     def __init__(self, name, gender, element, weapon, tutorial):
         self.name = name
@@ -57,8 +62,8 @@ lvl9 = level(9, 260, 230, 70, 80, ["Fight 80 slimes, Fight 80 hilichurls, Fight 
 lvl10 = level(10, 300, 300, 80, 90, ["Fight 100 slimes, Fight 100 hilichurls, Fight 20 Bigchurls, Fight 30 abyss mages, FIght 25 bandits, Fight 15 samurai, Fight 15 fatui agents, Fight 20 robots, Fight 6 natureswayatgettingbackatus, Fight 10 bobs"])
 print(lvl1.hp)
 
-currentLvl = lvl1
-remove_health = currentLvl.atk
+currentlvl = lvl1
+remove_health = currentlvl.atk
 
 print("\nYou are level 1 because you repel women lmao.")
 
@@ -93,7 +98,7 @@ class enemies(user):
         self.defense = defense
         self.grass = grass
     def attack(self, enemies):
-        enemies.hp = enemies.hp - level.atk
+        enemies.hp = enemies.hp - currentlvl.atk
 
 slimes = enemies("slimes", 5, 1, 1, 0, 2)
 hilichurls = enemies("hilichurls", 5, 2, 2, 1, 3)
@@ -109,9 +114,18 @@ bob = enemies("bob", 1000, 500, 250, 150, 1000)
 
 def Battle_info(enemies):
     print(f"{enemies.name} hp: {enemies.hp}, atk: {enemies.atk}, speed: {enemies.speed}, defense: {enemies.defense}, grass: {enemies.grass}")
-    print(f"{first_word} hp: {level.hp}, atk: {level.atk}, speed: {level.speed}, defense: {level.defense})")
-    enemies.attack
-    print(f"hp: {enemies.hp}")
+    print(f"{first_word} hp: {currentlvl.hp}, atk: {currentlvl.atk}, speed: {currentlvl.speed}, defense: {currentlvl.defense}")
+    print("your move first")
+    ops = (add, sub, mul)
+    op = random.choice(ops)
+    mathnumber1, mathnumber2 = random.randint(1,12), random.randint(1,12)
+    randommathproblem = op(mathnumber1, mathnumber2)
+    mathproblem = input(randommathproblem ", answer:")
+    if mathproblem == True:
+        enemies.attack(enemies)
+        print("hp:", {enemies.hp})
+    else:
+        print(":(")
 
 checker = 0
 tutorial4 = input("Would you like to start your quests? YOU CAN ONLY DO OTHER THINGS ONCE YOU COMPLETE THIS WARNINGGGG! NO GAME FOR YOU IF YOU SAY NO (Y/N): ").upper()
