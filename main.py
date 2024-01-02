@@ -115,24 +115,29 @@ bob = enemies("bob", 1000, 500, 250, 150, 1000)
 def Battle_info(enemies):
     print(f"{enemies.name} hp: {enemies.hp}, atk: {enemies.atk}, speed: {enemies.speed}, defense: {enemies.defense}, grass: {enemies.grass}")
     print(f"{first_word} hp: {currentlvl.hp}, atk: {currentlvl.atk}, speed: {currentlvl.speed}, defense: {currentlvl.defense}")
-    print("your move first")
-    ops = (add, sub, mul)
-    op = random.choice(ops)
-    mathnumber1, mathnumber2 = random.randint(1,12), random.randint(1,12)
-    if op == add:
-        print(mathnumber1, "+" ,mathnumber2)
-    elif op == sub:
-        print(mathnumber1,"-",mathnumber2)
-    elif op == mul:
-        print(mathnumber2,"x",mathnumber2)
-    randommathproblem = int(op(mathnumber1, mathnumber2))
-    print(randommathproblem)
-    mathanswer = int(input("answer:"))
-    if mathanswer == randommathproblem:
-        enemies.attack(enemies)
-        print("enemy hp:", {enemies.hp})
-    else:
-        print(":(")
+    while enemies.hp > 0:
+        print("your move first")
+        mrkrabs = 0
+        ops = (add, sub, mul)
+        op = random.choice(ops)
+        mathnumber1, mathnumber2 = random.randint(1,12), random.randint(1,12)
+        if op == add:
+            print(mathnumber1, "+" ,mathnumber2)
+        elif op == sub:
+            print(mathnumber1,"-",mathnumber2)
+        elif op == mul:
+            print(mathnumber2,"x",mathnumber2)
+        randommathproblem = int(op(mathnumber1, mathnumber2))
+        print(randommathproblem)
+        mathanswer = int(input("answer:"))
+        if mathanswer == randommathproblem:
+            enemies.attack(enemies)
+            print("enemy hp:", {enemies.hp})
+        else:
+            print(":(")
+            mrkrabs += 1
+            
+
 
 checker = 0
 tutorial4 = input("Would you like to start your quests? YOU CAN ONLY DO OTHER THINGS ONCE YOU COMPLETE THIS WARNINGGGG! NO GAME FOR YOU IF YOU SAY NO (Y/N): ").upper()
