@@ -119,14 +119,20 @@ def Battle_info(enemies):
     ops = (add, sub, mul)
     op = random.choice(ops)
     mathnumber1, mathnumber2 = random.randint(1,12), random.randint(1,12)
-    print(mathnumber1, op, mathnumber2)
+    if op == add:
+        print(mathnumber1, "+" ,mathnumber2)
+    elif op == sub:
+        print(mathnumber1,"-",mathnumber2)
+    elif op == mul:
+        print(mathnumber2,"x",mathnumber2)
     randommathproblem = int(op(mathnumber1, mathnumber2))
-    mathproblem = input("answer:")
-"""     if mathproblem == True:
+    print(randommathproblem)
+    mathanswer = int(input("answer:"))
+    if mathanswer == randommathproblem:
         enemies.attack(enemies)
-        print("hp:", {enemies.hp})
+        print("enemy hp:", {enemies.hp})
     else:
-        print(":(") """
+        print(":(")
 
 checker = 0
 tutorial4 = input("Would you like to start your quests? YOU CAN ONLY DO OTHER THINGS ONCE YOU COMPLETE THIS WARNINGGGG! NO GAME FOR YOU IF YOU SAY NO (Y/N): ").upper()
