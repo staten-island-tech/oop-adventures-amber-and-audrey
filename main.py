@@ -4,13 +4,13 @@ from operator import add, sub, mul
 
 
 class user():
-    def __init__(self, name, gender, element, weapon, tutorial):
+    def __init__(self, name, gender, element, weapon, tutorial, inventory):
         self.name = name
         self.gender = gender
         self.element = element
         self.weapon = weapon
         self.tutorial = tutorial
-
+        self.inventory = inventory
 """     def __str__(self):
         return f"{self.name}"
     def __str__(self):
@@ -63,7 +63,7 @@ lvl10 = level(10, 300, 300, 80, 90, ["Fight 100 slimes, Fight 100 hilichurls, Fi
 print(lvl1.hp)
 
 currentlvl = lvl1
-remove_health = currentlvl.atk
+
 
 print("\nYou are level 1 because you repel women lmao.")
 
@@ -99,6 +99,8 @@ class enemies(user):
         self.grass = grass
     def attack(self, enemies):
         enemies.hp = enemies.hp - currentlvl.atk
+    def enemyattack(self, enemies):
+        currentlvl.hp = currentlvl.hp - enemies.atk
 
 slimes = enemies("slimes", 5, 1, 1, 0, 2)
 hilichurls = enemies("hilichurls", 5, 2, 2, 1, 3)
@@ -116,7 +118,7 @@ def Battle_info(enemies):
     print(f"{enemies.name} hp: {enemies.hp}, atk: {enemies.atk}, speed: {enemies.speed}, defense: {enemies.defense}, grass: {enemies.grass}")
     print(f"{first_word} hp: {currentlvl.hp}, atk: {currentlvl.atk}, speed: {currentlvl.speed}, defense: {currentlvl.defense}")
     while enemies.hp > 0:
-        print("your move first")
+        print("your move")
         mrkrabs = 0
         ops = (add, sub, mul)
         op = random.choice(ops)
@@ -128,14 +130,22 @@ def Battle_info(enemies):
         elif op == mul:
             print(mathnumber2,"x",mathnumber2)
         randommathproblem = int(op(mathnumber1, mathnumber2))
-        print(randommathproblem)
         mathanswer = int(input("answer:"))
         if mathanswer == randommathproblem:
             enemies.attack(enemies)
             print("enemy hp:", {enemies.hp})
         else:
-            print(":(")
-            mrkrabs += 1
+            print("enemies move it move it")
+            enemies.enemyattack(enemies)
+            print("your hp:"f"{currentlvl.hp}")
+    print(f"{first_word}"+ " has won!")
+    user.inventory.append 
+
+
+            
+        
+    
+            
             
 
 
