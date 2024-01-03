@@ -147,8 +147,15 @@ if user1 == "Y":
 
 
 
-    
+from Merchants import Merchant
+#creates new instance of Merchant
 
+Robert = Merchant("Robert", ["Strength Potion (It boosts your atk by 20 for 1 battle)", "Speed Potion"])
+
+
+
+
+    
 
 
 
