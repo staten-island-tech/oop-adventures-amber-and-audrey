@@ -28,7 +28,7 @@ print()
 
 #input a string
 tutorial1 = input("Enter a name, gender, element, and weapon with a space separating each word: ")
-
+user.inventory = []
 #to separate the string by each word using spaces
 split_tutorial1 = tutorial1.split()
 
@@ -119,7 +119,6 @@ def Battle_info(enemies):
     print(f"{first_word} hp: {currentlvl.hp}, atk: {currentlvl.atk}, speed: {currentlvl.speed}, defense: {currentlvl.defense}")
     while enemies.hp > 0:
         print("your move")
-        mrkrabs = 0
         ops = (add, sub, mul)
         op = random.choice(ops)
         mathnumber1, mathnumber2 = random.randint(1,12), random.randint(1,12)
@@ -138,8 +137,19 @@ def Battle_info(enemies):
             print("enemies move it move it")
             enemies.enemyattack(enemies)
             print("your hp:"f"{currentlvl.hp}")
-    print(f"{first_word}"+ " has won!")
-    user.inventory.append 
+    if currentlvl.hp == 0:
+        print("your dead")
+        battlemessage = input("battle again? (Y/N): ").upper()
+        if battlemessage == "Y":
+            enemies.hp = enemies.hp
+            enemies.atk = enemies.atk
+            currentlvl.hp = currentlvl.hp
+            currentlvl.atk = currentlvl.atk
+        if battlemessage == "N":
+            return
+    if enemies.hp == 0:
+        print(f"{first_word}"+ " has won!")
+ 
 
 
             
@@ -159,10 +169,16 @@ else:
     
 if checker == 1:
     print("You are walking towards the battle arena...")
-    user1 = input("You have encountered a wild slime! Would you like to initiate a battle? (Y/N): ").upper()
-if user1 == "Y":
+    print("You have encountered a wild slime! you no die (Y/N): ")
     enemies = slimes
     Battle_info(enemies)
+    user.inventory.append("grass")(enemies.grass)
+    print("grass obtained:" + user.inventory)
+
+
+
+
+
 
     
 
