@@ -7,9 +7,9 @@ class Merchants():
         self.products.remove(item)
         print(f'You have purchased: {item}')
         print(self.products)
-    @staticmethod
     def greeting():
-        print("Welcome to my shop")
+        input("Welcome to the Merchant shop")
+
     
 
                  
