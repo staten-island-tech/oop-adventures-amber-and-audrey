@@ -119,17 +119,22 @@ def Battle_info(enemies):
     print(f"{first_word} hp: {currentlvl.hp}, atk: {currentlvl.atk}, speed: {currentlvl.speed}, defense: {currentlvl.defense}")
     while enemies.hp > 0:
         print("your move")
-        ops = (add, sub, mul)
+        ops = ("add", "sub", "mul")
         op = random.choice(ops)
         mathnumber1, mathnumber2 = random.randint(1,12), random.randint(1,12)
-        if op == add:
+        if op == "add":
             print(mathnumber1, "+" ,mathnumber2)
-        elif op == sub:
+            randommathproblem = mathnumber1 + mathnumber2
+        elif op == "sub":
             print(mathnumber1,"-",mathnumber2)
-        elif op == mul:
+            randommathproblem = mathnumber1 - mathnumber2
+        elif op == "mul":
             print(mathnumber2,"x",mathnumber2)
-        randommathproblem = int(op(mathnumber1, mathnumber2))
+            randommathproblem = mathnumber1 * mathnumber2
+        else:
+            print("bomboclat")
         mathanswer = int(input("answer:"))
+        print(randommathproblem)
         if mathanswer == randommathproblem:
             enemies.attack(enemies)
             print("enemy hp:", {enemies.hp})
@@ -140,7 +145,7 @@ def Battle_info(enemies):
     if currentlvl.hp == 0:
         print("your dead")
         battlemessage = input("battle again? (Y/N): ").upper()
-        if battlemessage == "Y":
+        "f battlemessage == "Y":
             enemies.hp = enemies.hp
             enemies.atk = enemies.atk
             currentlvl.hp = currentlvl.hp
@@ -169,7 +174,7 @@ else:
     
 if checker == 1:
     print("You are walking towards the battle arena...")
-    print("You have encountered a wild slime! you no die (Y/N): ")
+    memem = input("You have encountered a wild slime! you have no choice (Y/N): ")
     enemies = slimes
     Battle_info(enemies)
     user.inventory.append("grass")(enemies.grass)
