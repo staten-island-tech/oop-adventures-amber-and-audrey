@@ -7,8 +7,11 @@ class Merchants():
         self.products.remove(item)
         print(f'You have purchased: {item}')
         print(self.products)
-    def greeting():
+    def greeting(self, products, price):
+        self.products = products
+        self.price = price
         input("Welcome to the Merchant shop")
+        print(products, price)
 
     
 

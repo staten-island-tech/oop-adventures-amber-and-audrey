@@ -1,4 +1,4 @@
-import random
+""" import random
 from operator import add, sub, mul
 
 
@@ -11,7 +11,7 @@ class user():
         self.weapon = weapon
         self.tutorial = tutorial
 
-     def __str__(self):
+    def __str__(self):
         return f"{self.name}"
     def __str__(self):
         return f"{self.gender}"
@@ -21,6 +21,8 @@ class user():
         return f"{self.weapon}"
     def __str__(self):
         return f"{self.tutorial}"
+
+        
 
 
 print("Welcome to Waifu Simulator!")
@@ -122,11 +124,11 @@ def Battle_info(enemies):
     print(mathnumber1, op, mathnumber2)
     randommathproblem = int(op(mathnumber1, mathnumber2))
     mathproblem = input("answer:")
-    """if mathproblem == True:
+    if mathproblem == True:
         enemies.attack(enemies)
         print("hp:", {enemies.hp})
     else:
-        print(":(")"""
+        print(":(")
 
 checker = 0
 tutorial4 = input("Would you like to start your quests? YOU CAN ONLY DO OTHER THINGS ONCE YOU COMPLETE THIS WARNINGGGG! NO GAME FOR YOU IF YOU SAY NO (Y/N): ").upper()
@@ -144,7 +146,7 @@ if user1 == "Y":
     Battle_info(enemies)
 
     
-
+ """
 
 
 from merchants import Merchant
@@ -156,11 +158,11 @@ Jamie = Merchant("Jamie", ["Napoletana Pizza", "Risotto", "Gelato", "Lasagna", "
 
 
 
+
+
     
 
 
 
 
 
-
-        
