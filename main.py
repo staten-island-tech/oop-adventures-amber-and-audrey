@@ -129,7 +129,7 @@ def Battle_info(enemies):
             print(mathnumber1,"-",mathnumber2)
             randommathproblem = mathnumber1 - mathnumber2
         elif op == "mul":
-            print(mathnumber2,"x",mathnumber2)
+            print(mathnumber1,"x",mathnumber2)
             randommathproblem = mathnumber1 * mathnumber2
         else:
             print("bomboclat")
@@ -145,7 +145,7 @@ def Battle_info(enemies):
     if currentlvl.hp == 0:
         print("your dead")
         battlemessage = input("battle again? (Y/N): ").upper()
-        "f battlemessage == "Y":
+        if battlemessage == "Y":
             enemies.hp = enemies.hp
             enemies.atk = enemies.atk
             currentlvl.hp = currentlvl.hp
@@ -177,8 +177,9 @@ if checker == 1:
     memem = input("You have encountered a wild slime! you have no choice (Y/N): ")
     enemies = slimes
     Battle_info(enemies)
-    user.inventory.append("grass")(enemies.grass)
-    print("grass obtained:" + user.inventory)
+    user.inventory.append("grass: "=={enemies.grass})
+    print("grass: ")
+    print(user.inventory)
 
 
 
