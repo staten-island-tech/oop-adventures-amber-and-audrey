@@ -10,7 +10,12 @@ class user():
         self.element = element
         self.weapon = weapon
         self.tutorial = tutorial
+        self.grass = grass
         self.inventory = inventory
+    def buy(item):
+        user.inventory.append(item)
+        user.inventory.remove.grass(item)
+
 """     def __str__(self):
         return f"{self.name}"
     def __str__(self):
@@ -177,21 +182,9 @@ if checker == 1:
     memem = input("You have encountered a wild slime! you have no choice (Y/N): ")
     enemies = slimes
     Battle_info(enemies)
-    user.inventory.append("grass: "=={enemies.grass})
-    print("grass: ")
+    user.inventory.append(enemies.grass)
+    print("grass obtained: ")
     print(user.inventory)
-
-
-
-
-
-
-    
-
-
-
-    
-
 
 
 
