@@ -16,16 +16,6 @@ class user():
         user.inventory.append(item)
         user.inventory.remove.grass(item)
 
-"""     def __str__(self):
-        return f"{self.name}"
-    def __str__(self):
-        return f"{self.gender}"
-    def __str__(self):
-        return f"{self.element}"
-    def __str__(self):
-        return f"{self.weapon}"
-    def __str__(self):
-        return f"{self.tutorial}" """
 
 
 print("Welcome to Waifu Simulator!")
@@ -120,57 +110,56 @@ robots = enemies("robots", 170, 100, 100, 80, 75)
 natureswayofgettingbackatus = enemies("natureswayofgettingbackatus", 200, 150, 150, 120, 100)
 bob = enemies("bob", 1000, 500, 250, 150, 1000)
 
-
-def Battle_info(enemies):
-    print(f"{enemies.name} hp: {enemies.hp}, atk: {enemies.atk}, speed: {enemies.speed}, defense: {enemies.defense}, grass: {enemies.grass}")
-    print(f"{first_word} hp: {currentlvl.hp}, atk: {currentlvl.atk}, speed: {currentlvl.speed}, defense: {currentlvl.defense}")
-    while enemies.hp > 0:
-        print("your move")
-        ops = ("add", "sub", "mul")
-        op = random.choice(ops)
-        mathnumber1, mathnumber2 = random.randint(1,12), random.randint(1,12)
-        if op == "add":
-            print(mathnumber1, "+" ,mathnumber2)
-            randommathproblem = mathnumber1 + mathnumber2
-        elif op == "sub":
-            print(mathnumber1,"-",mathnumber2)
-            randommathproblem = mathnumber1 - mathnumber2
-        elif op == "mul":
-            print(mathnumber1,"x",mathnumber2)
-            randommathproblem = mathnumber1 * mathnumber2
-        else:
-            print("bomboclat")
-        mathanswer = int(input("answer:"))
-        print(randommathproblem)
-        if mathanswer == randommathproblem:
-            enemies.attack(enemies)
-            print("enemy hp:", {enemies.hp})
-        else:
-            print("enemies move it move it")
-            enemies.enemyattack(enemies)
-            print("your hp:"f"{currentlvl.hp}")
-    if currentlvl.hp == 0:
-        print("your dead")
-        battlemessage = input("battle again? (Y/N): ").upper()
-        if battlemessage == "Y":
-            enemies.hp = enemies.hp
-            enemies.atk = enemies.atk
-            currentlvl.hp = currentlvl.hp
-            currentlvl.atk = currentlvl.atk
-        if battlemessage == "N":
-            return
-    if enemies.hp == 0:
-        print(f"{first_word}"+ " has won!")
+class Battle():
+    def Battle_info(enemy):
+        print(f"{enemy.name} hp: {enemy.hp}, atk: {enemy.atk}, speed: {enemy.speed}, defense: {enemy.defense}, grass: {enemy.grass}")
+        print(f"{first_word} hp: {currentlvl.hp}, atk: {currentlvl.atk}, speed: {currentlvl.speed}, defense: {currentlvl.defense}")
+        while enemy.hp > 0:
+            print("your move")
+            ops = ("add", "sub", "mul")
+            op = random.choice(ops)
+            mathnumber1, mathnumber2 = random.randint(1,12), random.randint(1,12)
+            if op == "add":
+                print(mathnumber1, "+" ,mathnumber2)
+                randommathproblem = mathnumber1 + mathnumber2
+            elif op == "sub":
+                print(mathnumber1,"-",mathnumber2)
+                randommathproblem = mathnumber1 - mathnumber2
+            elif op == "mul":
+                print(mathnumber1,"x",mathnumber2)
+                randommathproblem = mathnumber1 * mathnumber2
+            else:
+                print("bongo cat")
+            mathanswer = int(input("answer:"))
+            print(randommathproblem)
+            if mathanswer == randommathproblem:
+                enemy.attack(enemy)
+                print(f"enemy hp: {enemy.hp}")
+            else:
+                print("enemies move it move it")
+                enemy.enemyattack(enemy)
+                print(f"your hp:{currentlvl.hp}")
+        if currentlvl.hp == 0:
+            print("your dead")
+            battlemessage = input("battle again? (Y/N): ").upper()
+            if battlemessage == "Y":
+                enemy.hp = enemy.hp
+                enemy.atk = enemy.atk
+                currentlvl.hp = currentlvl.hp
+                currentlvl.atk = currentlvl.atk
+            if battlemessage == "N":
+                return
+        if enemy.hp == 0:
+            print(f"{first_word}"+ " has won!")
  
 
 
+
+
+Battle.Battle_info(slimes)
             
         
     
-            
-            
-
-
 checker = 0
 tutorial4 = input("Would you like to start your quests? YOU CAN ONLY DO OTHER THINGS ONCE YOU COMPLETE THIS WARNINGGGG! NO GAME FOR YOU IF YOU SAY NO (Y/N): ").upper()
 if tutorial4 == "Y":
@@ -183,7 +172,7 @@ if checker == 1:
     print("You are walking towards the battle arena...")
     memem = input("You have encountered a wild slime! you have no choice (Y/N): ")
     enemies = slimes
-    Battle_info(enemies)
+    Battle.Battle_info()
     user.grass += enemies.grass
     print("grass obtained: ")
     print(user.grass)
