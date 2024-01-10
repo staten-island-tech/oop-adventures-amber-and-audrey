@@ -33,7 +33,9 @@ print()
 
 #input a string
 tutorial1 = input("Enter a name, gender, element, and weapon with a space separating each word: ")
-user.inventory = []
+grass = 0
+user.grass = grass
+user.inventory = [user.grass]
 #to separate the string by each word using spaces
 split_tutorial1 = tutorial1.split()
 
@@ -182,9 +184,9 @@ if checker == 1:
     memem = input("You have encountered a wild slime! you have no choice (Y/N): ")
     enemies = slimes
     Battle_info(enemies)
-    user.inventory.append(enemies.grass)
+    user.grass += enemies.grass
     print("grass obtained: ")
-    print(user.inventory)
+    print(user.grass)
 
 
 
