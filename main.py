@@ -176,7 +176,10 @@ if checker == 1:
     user.grass += enemies.grass
     print("grass obtained: ")
     print(user.grass)
-
+    print1 = input("This is grass, I know you dont know what it is but you get to touch it for the first time.")
+    print2 = input("feels good?")
+    print3 = input("bet it doesnt. You havent come out of your moms basement for 31 years.")
+    print4 = input("What is wrong with you. 😲")
 
 
 
