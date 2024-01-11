@@ -151,12 +151,16 @@ class Battle():
                 return
         if enemy.hp == 0:
             print(f"{first_word}"+ " has won!")
+            enemy.hp = enemy.hp
+            enemy.atk = enemy.atk
+            currentlvl.hp = currentlvl.hp
+            currentlvl.atk = currentlvl.atk
  
 
 
 
 
-Battle.Battle_info(slimes)
+
             
         
     
@@ -171,8 +175,7 @@ else:
 if checker == 1:
     print("You are walking towards the battle arena...")
     memem = input("You have encountered a wild slime! you have no choice (Y/N): ")
-    enemies = slimes
-    Battle.Battle_info()
+    Battle.Battle_info(slimes)
     user.grass += enemies.grass
     print("grass obtained: ")
     print(user.grass)
@@ -180,6 +183,42 @@ if checker == 1:
     print2 = input("feels good?")
     print3 = input("bet it doesnt. You havent come out of your moms basement for 31 years.")
     print4 = input("What is wrong with you. 😲")
+    print5 = input("Now you fight again UwU")
+    Battle.Battle_info(slimes)
+    user.grass += slimes.grass
+    print("grass obtained: ")
+    print(user.grass)
+    Battle.Battle_info(slimes)
+    user.grass += slimes.grass
+    print("grass obtained: ")
+    print(user.grass)
+    Battle.Battle_info(hilichurls)
+    user.grass += hilichurls.grass
+    print("grass obtained: ")
+    print(user.grass)
+    Battle.Battle_info(hilichurls)
+    user.grass += hilichurls.grass
+    print("grass obtained: ")
+    print(user.grass)
+    Battle.Battle_info(hilichurls)
+    user.grass += hilichurls.grass
+    print("grass obtained: ")
+    print(user.grass)
+    Battle.Battle_info(bigchurls)
+    user.grass += bigchurls.grass
+    print("grass obtained: ")
+    print(user.grass)
+    Battle.Battle_info(abyss_mages)
+    user.grass += abyss_mages.grass
+    print("grass obtained: ")
+    print(user.grass)
+    
+
+
+
+    
+
+
 
 
 
