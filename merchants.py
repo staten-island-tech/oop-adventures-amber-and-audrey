@@ -1,17 +1,20 @@
 class Merchants():
-    def __init__(self, name, products, price):
+    def __init__(self, name, products):
         self.name = name
         self.products = products
-        self.price = price
     def sell(self, item):
         self.products.remove(item)
         print(f'You have purchased: {item}')
         print(self.products)
-    def greeting(self, products, price):
+    def greeting(self, products):
         self.products = products
-        self.price = price
         input("Welcome to the Merchant shop")
-        print(products, price)
+        print(products)
+
+
+Robert = Merchants("Robert", [])
+
+
 
     
 
