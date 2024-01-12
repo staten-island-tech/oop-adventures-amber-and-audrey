@@ -1,6 +1,6 @@
 import random
 from operator import add, sub, mul
-
+from merchants import Merchants
 
 
 class user():
@@ -114,6 +114,8 @@ class Battle():
     def Battle_info(enemy):
         print(f"{enemy.name} hp: {enemy.hp}, atk: {enemy.atk}, speed: {enemy.speed}, defense: {enemy.defense}, grass: {enemy.grass}")
         print(f"{first_word} hp: {currentlvl.hp}, atk: {currentlvl.atk}, speed: {currentlvl.speed}, defense: {currentlvl.defense}")
+        originalhp = enemy.hp
+        originalhpyou = currentlvl.hp
         while enemy.hp > 0:
             print("your move")
             ops = ("add", "sub", "mul")
@@ -151,10 +153,8 @@ class Battle():
                 return
         if enemy.hp == 0:
             print(f"{first_word}"+ " has won!")
-            enemy.hp = enemy.hp
-            enemy.atk = enemy.atk
-            currentlvl.hp = currentlvl.hp
-            currentlvl.atk = currentlvl.atk
+            enemy.hp += originalhp
+            
  
 
 
@@ -177,51 +177,43 @@ if checker == 1:
     memem = input("You have encountered a wild slime! you have no choice (Y/N): ")
     Battle.Battle_info(slimes)
     user.grass += enemies.grass
-    print("grass obtained: ")
+    print("grass you have: ")
     print(user.grass)
     print1 = input("This is grass, I know you dont know what it is but you get to touch it for the first time.")
     print2 = input("feels good?")
     print3 = input("bet it doesnt. You havent come out of your moms basement for 31 years.")
     print4 = input("What is wrong with you. 😲")
     print5 = input("Now you fight again UwU")
-    Battle.Battle_info(slimes)
-    user.grass += slimes.grass
-    print("grass obtained: ")
-    print(user.grass)
-    Battle.Battle_info(slimes)
-    user.grass += slimes.grass
-    print("grass obtained: ")
-    print(user.grass)
     Battle.Battle_info(hilichurls)
     user.grass += hilichurls.grass
-    print("grass obtained: ")
-    print(user.grass)
-    Battle.Battle_info(hilichurls)
-    user.grass += hilichurls.grass
-    print("grass obtained: ")
-    print(user.grass)
-    Battle.Battle_info(hilichurls)
-    user.grass += hilichurls.grass
-    print("grass obtained: ")
+    print("grass you have: ")
     print(user.grass)
     Battle.Battle_info(bigchurls)
     user.grass += bigchurls.grass
-    print("grass obtained: ")
+    print("grass you have: ")
     print(user.grass)
     Battle.Battle_info(abyss_mages)
     user.grass += abyss_mages.grass
-    print("grass obtained: ")
+    print("grass you have: ")
     print(user.grass)
+    print5 = input("look what happened")
+    currentlvl = lvl2
+    print("tada your level2 :D")
+    print("you get to shop at the market now! (everybody ran when they saw your face before....)")
+    mrkrabs = input("Would you like to go to the market or continue fighting to level up? (Y/N): ").upper()
+    if mrkrabs == "Y":
+        checker += 1
+    elif mrkrabs == "N":
+        checker += 2
+
+
+Merchants()
+
+
+if checker == 2:
+    print("Who do you go to? Robert:")
+    Robert = Merchants("Robert", ["the souls of the innocent"])
+    user.buy("the souls of the innocent")
+    Robert.remove("the souls of the innocent")
+    print(user.inventory)
     
-
-
-
-    
-
-
-
-
-
-
-
-        
