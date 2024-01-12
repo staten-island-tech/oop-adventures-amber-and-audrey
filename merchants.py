@@ -12,7 +12,7 @@ class Merchants():
         print(products)
 
 
-Robert = Merchants("Robert", [])
+
 
 
 
