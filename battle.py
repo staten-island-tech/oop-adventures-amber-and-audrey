@@ -68,6 +68,9 @@ class Battle():
     slime_fight()
 
 
+
+
+
 """ def Battle_info(enemy):
         print(f"{enemy.name} hp: {enemy.hp}, atk: {enemy.atk}, speed: {enemy.speed}, defense: {enemy.defense}, grass: {enemy.grass}")
         print(f"{first_word} hp: {currentlvl.hp}, atk: {currentlvl.atk}, speed: {currentlvl.speed}, defense: {currentlvl.defense}")
