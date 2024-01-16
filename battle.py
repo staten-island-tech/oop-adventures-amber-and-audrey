@@ -165,8 +165,7 @@ def bigchurl_fight():
                 player.hp = player.hp
                 print(f"Your hp: {player.hp}")
                 if bigchur.hp <= 0:
-                    print("Traveler has won the battle!")
-    print("Traveler has won the battle!")                
+                    print("Traveler has won the battle!")                
     print9 = input("Hmm, I guess this was not much of a challenge huh...")
     print10 = input("You'll now be using a gold sword cause the next enemy is gonna be harder... Be ready and brace yourself")
     print()
@@ -199,7 +198,7 @@ def abyssmage_fight():
         if mathanswer == mathproblem:
             abyss_mag.hp = abyss_mag.hp - atk
             s = input("The abyss mage has taken damage...")
-            print(f"Bigchurl hp: {abyss_mag.hp}")
+            print(f"Abyss Mage hp: {abyss_mag.hp}")
             if abyss_mag.hp <= 0:
                 print("Traveler has won the battle!")
             else:
@@ -260,7 +259,7 @@ def bandit_fight():
                 i = input("You have taken damage...")
                 print(f"Your hp: {player.hp}")
                 bandi.hp = bandi.hp - atk
-                s = input("The samurai has taken damage...")
+                s = input("The bandit has taken damage...")
                 print(f"Bandit hp: {bandi.hp}")
             if player.hp <= 0:
                 print("You died...")
@@ -404,7 +403,7 @@ def bob_fight():
         mathanswer = int(input("Answer: "))
         if mathanswer == mathproblem:
             bo.hp = bo.hp - atk
-            s = input("BOB has taken damage...")
+            s = input("bob has taken damage...")
             print(f"bob hp: {bo.hp}")
             if bo.hp <= 0:
                 print("Traveler has won the battle!")
@@ -414,7 +413,7 @@ def bob_fight():
                 i = input("You have taken damage...")
                 print(f"Your hp: {player.hp}")
                 bo.hp = bo.hp - atk
-                s = input("The natureswayofgettingbackatus has taken damage...")
+                s = input("bob has taken damage...")
                 print(f"bob hp: {bo.hp}")
             if player.hp <= 0:
                 print("You died...")
