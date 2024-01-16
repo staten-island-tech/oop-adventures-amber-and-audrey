@@ -1,7 +1,6 @@
 from classes import user, slime, hilichurl, bigchurl, abyss_mage, bandit, samurai, natureswayofgettingbackatus, bob
 
 
-
 #player
 player = user("Traveler", 100)
 
@@ -47,21 +46,3 @@ if player.hp > 0:
                                     bob_fight()
 else:
     print("You have died because you have no skill l bozo...")
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
