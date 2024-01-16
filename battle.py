@@ -14,6 +14,7 @@ wooden_sword = 5
 atk = wooden_sword
 
 def slime_fight():
+    print("You are now fighting the 'Slime'")
     atk = wooden_sword
     slim = slime("Slime", 10, 5)
     player = user("Traveler", 100)
@@ -57,6 +58,7 @@ def slime_fight():
                 print(f"Your hp: {player.hp}")
                 if slim.hp <= 0:
                     print("Traveler has won the battle!")
+    print("Traveler has won the battle!")
     print1 = input("This is grass, I know you dont know what it is but you get to touch it for the first time.")
     print2 = input("Feels good?")
     print3 = input("Bet it doesnt. You havent come out of your moms basement for 31 years.")
@@ -68,6 +70,7 @@ slime_fight()
 
 
 def hilichurl_fight():
+    print("You are now fighting the 'Hilichurl'")
     player = user("Traveler", 100)
     hilichur = hilichurl("Hilichurl", 30, 5)
     stone_sword = 7
@@ -113,11 +116,12 @@ def hilichurl_fight():
                 if hilichur.hp <= 0:
                     print("Traveler has won the battle!")
     print6 = input("I see you are getting the hang of it...")
-    print7 = input("I'll just have to make it more challenging...")
+    print7 = input("I'll just have to make it more challenging...But you won't die yet cause you've upgraded to an iron sword")
     print()
 hilichurl_fight()
 
 def bigchurl_fight():
+    print("You are now fighting the 'Bigchurl'")
     player = user("Traveler", 100)
     bigchur = bigchurl("Hilichurl", 30, 5)
     iron_sword = 10
@@ -169,6 +173,7 @@ def bigchurl_fight():
 bigchurl_fight()
 
 def abyssmage_fight():
+    print("You are now fighting the 'Abyss Mage'")
     player = user("Traveler", 100)
     abyss_mag = abyss_mage("Abyss Mage", 70, 10)
     gold_sword = 15
@@ -220,6 +225,7 @@ def abyssmage_fight():
 abyssmage_fight()
 
 def bandit_fight():
+    print("You are now fighting the 'Bandit'")
     player = user("Traveler", 100)
     bandi = bandit("Bandit", 90, 15)
     diamond_sword = 18
@@ -264,12 +270,13 @@ def bandit_fight():
                 print(f"Your hp: {player.hp}")
                 if bandi.hp <= 0:
                     print("Traveler has won the battle!")
-    print14 = input("")
-    
+    print14 = input("I'm proud of you son... is what you think you want me to say? Too bad cause you still got many enemies ahead of ya.")
+    print15 = input("I'll make ya life a little easier with an emerald sword...?")
     print()
 bandit_fight()
 
 def samurai_fight():
+    print("You are now fighting the 'Samurai'")
     player = user("Traveler", 100)
     samura = samurai("Samurai", 110, 15)
     emerald_sword = 20
@@ -314,13 +321,14 @@ def samurai_fight():
                 print(f"Your hp: {player.hp}")
                 if samura.hp <= 0:
                     print("Traveler has won the battle!")
-    
-    
-    
+    print16 = input("Damn you actually got this far... no wonder you got into tech :0")
+    print17 = input("I guess your stinkiness is a talent cause it got you this far.")
+    print18 = input("Well enough of me talking you gotta get back into action to test out your new sword: netherite sword")
     print()
 samurai_fight()
 
 def natureswayofgettingbackatus_fight():
+    print("You are now fighting the 'Natureswayofgettingbackatus'")
     player = user("Traveler", 100)
     natureswayofgettingbackatu = natureswayofgettingbackatus("Natureswayofgettingbackatu", 130, 20)
     netherite_sword = 25
@@ -365,13 +373,13 @@ def natureswayofgettingbackatus_fight():
                 print(f"Your hp: {player.hp}")
                 if natureswayofgettingbackatu.hp <= 0:
                     print("Traveler has won the battle!")
-    
-    
-    
+    print19 = input("You may be discord mod, but your not discord mod enough")
+    print20 = input("Peep game and lock in... Its your time to shine with my new invention: the ultimate sword")
     print()
 natureswayofgettingbackatus_fight()
 
 def bob_fight():
+    print("You are now fighting the boss: 'bob'")
     player = user("Traveler", 100)
     bo = bob("bob", 150, 25)
     ultimate_sword = 30
@@ -416,8 +424,10 @@ def bob_fight():
                 print(f"Your hp: {player.hp}")
                 if bo.hp <= 0:
                     print("Traveler has won the battle!")
-    
-    
-    
+    print21 = input("Congrats your dad came back with the milk")
+    print22 = input("You've actually won...")
+    print23 = input("You've beat the game but you're parents are still not proud of you :D... now get back to doing hw")
     print()
+    print("Creators: 'hambergss' and 'BANANAJOEBUDDY'")
+    print("Credits go to Josephine and Deniz for helping us with our code")
 bob_fight()
